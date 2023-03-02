@@ -6,7 +6,7 @@ export default function Navbar() {
     const { data: session } = useSession();
     return (
         <nav className="flex justify-between py-6 px-16 shadow">
-            <p className="bold">Random Joke Generator</p>
+            <Link href="/" className="bold">Random Joke Generator</Link>
             <div className="nav-links flex gap-7">
                 <Link href="/" className="underline-anim">Home</Link>
                 <Link href="/" className="underline-anim">Add</Link>
