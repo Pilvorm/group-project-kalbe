@@ -1,10 +1,9 @@
 import Head from 'next/head'
-import styles from '@/styles/Home.module.css'
 
 import Layout from '@/components/Layout'
-import Joke from '@/components/Joke'
+import Form from '@/components/Form'
 
-export default function Home({ jokes }) {
+export default function Submit() {
   return (
     <>
       <Head>
@@ -15,19 +14,8 @@ export default function Home({ jokes }) {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"></link>
       </Head>
       <Layout>
-        <Joke jokes={jokes} />
+        <Form />
       </Layout>
     </>
   )
-}
-
-export async function getServerSideProps() {
-  const response = await fetch('https://official-joke-api.appspot.com/random_ten/')
-  const data = await response.json()
-
-  return {
-    props: {
-      jokes: data,
-    },
-  }
 }
