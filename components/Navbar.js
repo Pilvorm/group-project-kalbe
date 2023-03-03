@@ -9,7 +9,7 @@ export default function Navbar() {
             <Link href="/" className="bold">Random Joke Generator</Link>
             <div className="nav-links flex gap-7">
                 <Link href="/" className="underline-anim">Home</Link>
-                <Link href="/" className="underline-anim">Add</Link>
+                <Link href="/submit" className="underline-anim">Add</Link>
                 {session ? (
                     <>
                         <span>Hello, {session.user.name}</span>

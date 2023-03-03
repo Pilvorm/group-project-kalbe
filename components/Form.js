@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 const DEFAULT_DATA = {
     setup: "",
@@ -6,6 +7,18 @@ const DEFAULT_DATA = {
 
 const Form = () =>{
     const [form, setForm] = useState(DEFAULT_DATA);
+
+    function handleChange() {
+        alert("test")
+    }
+
+    function submitForm() {
+        alert("test")
+    }
+
+    function resetForm() {
+        alert("test")
+    }
 
     return(
         <div className="shadow p-8">
