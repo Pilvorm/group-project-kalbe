@@ -1,9 +1,11 @@
 import Head from 'next/head'
-
 import Layout from '@/components/Layout'
 import Form from '@/components/Form'
+import UserJokes from '@/components/UserJokes'
 
-export default function Submit() {
+import { useState } from 'react'
+
+export default function Submit({ userJokes }) {
   return (
     <>
       <Head>
@@ -15,7 +17,19 @@ export default function Submit() {
       </Head>
       <Layout>
         <Form />
+        <UserJokes userJokes={userJokes} />
       </Layout>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const response = await fetch('http://localhost:3000/api/userJokes')
+  const data = await response.json()
+
+  return {
+      props: {
+          userJokes: data,
+      },
+  }
 }

@@ -5,7 +5,7 @@ const DEFAULT_DATA = {
     punchline: "",
 }
 
-const Form = () =>{
+export default function Form() {
     const [form, setForm] = useState(DEFAULT_DATA);
 
     function handleChange() {
@@ -46,5 +46,3 @@ const Form = () =>{
             </div>
     )
 }
-
-export default Form;

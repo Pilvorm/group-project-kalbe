@@ -3,8 +3,9 @@ import styles from '@/styles/Home.module.css'
 
 import Layout from '@/components/Layout'
 import Joke from '@/components/Joke'
+import UserJokes from '@/components/UserJokes'
 
-export default function Home({ jokes }) {
+export default function Home({ jokes, userJokes }) {
   return (
     <>
       <Head>
@@ -16,18 +17,25 @@ export default function Home({ jokes }) {
       </Head>
       <Layout>
         <Joke jokes={jokes} />
+        <UserJokes userJokes={userJokes} />
       </Layout>
     </>
   )
 }
 
-export async function getServerSideProps() {
-  const response = await fetch('https://official-joke-api.appspot.com/random_ten/')
-  const data = await response.json()
+export async function getStaticProps() {
+  const responses = await Promise.all([
+    fetch('https://official-joke-api.appspot.com/random_ten/'),
+    fetch('http://localhost:3000/api/userJokes')
+  ])
+
+  const data1 = await responses[0].json()
+  const data2 = await responses[1].json()
 
   return {
     props: {
-      jokes: data,
+      jokes: data1,
+      userJokes: data2,
     },
   }
 }

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-const Joke = ({ jokes }) => {
+export default function Joke ({ jokes }) {
 
   const [visibility, setVisibility] = useState(false)
   const [index, setIndex] = useState(0)
@@ -75,17 +75,3 @@ const Joke = ({ jokes }) => {
     </div>
   )
 }
-
-export default Joke;
-
-// Joke.getInitialProps = async () => {
-//     let joke = {};
-
-//     try {
-//       const res = await axios.get('https://official-joke-api.appspot.com/jokes/1');
-//       joke = res.data;
-//     } catch (e) {
-//       console.error(e);
-//     }
-//     return { joke };
-// }
