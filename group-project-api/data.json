@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Daniel",
+    "setup": "Why was six afraid of seven?",
+    "punchline": "Because seven eight nine",
+    "createdAt": "2023-03-07T04:15:17.523Z",
+    "id": "1678162517523"
+  },
+  {
+    "id": "1",
+    "name": "Marcus",
+    "setup": "Why can't you trust an atom?",
+    "punchline": "Because they make up literally everything."
+  },
+  {
+    "id": "2",
+    "name": "Erick",
+    "setup": "How does the man in the moon get his hair cut?",
+    "punchline": "Eclipse it."
+  },
+  {
+    "id": "3",
+    "name": "Steven",
+    "setup": "Why don't pirates take a shower before they walk the plank?",
+    "punchline": "They just wash up on shore."
+  }
+]

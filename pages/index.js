@@ -26,7 +26,7 @@ export default function Home({ jokes, userJokes }) {
 export async function getStaticProps() {
   const responses = await Promise.all([
     fetch('https://official-joke-api.appspot.com/random_ten/'),
-    fetch('http://localhost:3000/api/userJokes')
+    fetch(`${process.env.API_URL}/resources`)
   ])
 
   const data1 = await responses[0].json()

@@ -3,8 +3,6 @@ import Layout from '@/components/Layout'
 import Form from '@/components/Form'
 import UserJokes from '@/components/UserJokes'
 
-import { useState } from 'react'
-
 export default function Submit({ userJokes }) {
   return (
     <>
@@ -24,7 +22,7 @@ export default function Submit({ userJokes }) {
 }
 
 export async function getStaticProps() {
-  const response = await fetch('http://localhost:3000/api/userJokes')
+  const response = await fetch(`${process.env.API_URL}/resources`)
   const data = await response.json()
 
   return {

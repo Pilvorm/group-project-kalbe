@@ -43,9 +43,9 @@ export default function Joke ({ jokes }) {
     <div id="joke-wrap"
       className="h-[700px] flex flex-col gap-14 justify-center items-center text-center"
       style={{ backgroundColor: colorVariants[color] }}>
-      <h2 className='setup text-4xl max-w-2xl text-white'>{jokes[index].setup}</h2>
-      <div className='punchline text-3xl text-white'>{visibility && <p>{jokes[index].punchline}</p>}</div>
-      <div className='flex gap-5'>
+      <h2 className='setup text-3xl md:text-4xl max-w-sm md:max-w-2xl text-white'>{jokes[index].setup}</h2>
+      <div className='punchline text-2xl md:text-3xl text-white'>{visibility && <p>{jokes[index].punchline}</p>}</div>
+      <div className='flex flex-col gap-5 md:flex-row'>
 
         <button
           onClick={handleClick}
@@ -70,8 +70,6 @@ export default function Joke ({ jokes }) {
         </Link>
         <p className='share text-white'>Share to Twitter</p>
       </div>
-      {/* <h3>Want to submit your own joke?</h3>
-      <Link href="/submit" className='link-btn px-8 py-2 border border-white rounded bg-white hover:bg-transparent hover:text-black transition-all' style={{ color: colorVariants[color] }}>Submit Joke</Link> */}
     </div>
   )
 }
