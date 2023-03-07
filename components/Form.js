@@ -3,6 +3,7 @@ import { useSession } from "next-auth/react";
 
 import axios from "axios";
 import { useRouter } from "next/router";
+import { withAuth } from "./Navbar";
 
 const DEFAULT_DATA = {
     name: "",
@@ -10,7 +11,7 @@ const DEFAULT_DATA = {
     punchline: "",
 }
 
-export default function Form() {
+function Form() {
     const { data: session } = useSession();
     const [form, setForm] = useState(DEFAULT_DATA);
 
@@ -67,3 +68,5 @@ export default function Form() {
         </div>
     )
 }
+
+export default withAuth(Form);
