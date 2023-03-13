@@ -5,7 +5,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { withAuth } from "./Navbar";
 
-const DEFAULT_DATA = {
+let DEFAULT_DATA = {
     name: "",
     setup: "",
     punchline: "",
@@ -13,6 +13,7 @@ const DEFAULT_DATA = {
 
 function Form() {
     const { data: session } = useSession();
+    DEFAULT_DATA.name = session ? session.user.name : ""
     const [form, setForm] = useState(DEFAULT_DATA);
 
     const handleChange = (e) => {
@@ -43,7 +44,7 @@ function Form() {
 
                 <div className="form-group flex flex-col gap-3">
                     <label htmlFor="name">Name</label>
-                    <input type="text" name="name" id="name" required value={session ? session.user.name : form.name} onChange={handleChange} className="outline outline-1 rounded px-2 py-4 h-12" />
+                    <input type="text" name="name" id="name" required value={form.name} onChange={handleChange} className="outline outline-1 rounded px-2 py-4 h-12" />
                 </div>
 
                 <div className="form-group flex flex-col gap-3">

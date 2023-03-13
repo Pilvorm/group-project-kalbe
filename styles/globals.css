@@ -55,7 +55,7 @@ body {
 .joke {
   width: 50%;
   display: grid;
-  grid-template-columns: 2fr 3.5fr;
+  grid-template-columns: 2.5fr 3.5fr;
 }
 
 .share {
