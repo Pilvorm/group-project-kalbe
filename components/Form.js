@@ -28,7 +28,7 @@ function Form() {
     const router = useRouter();
     const submitForm = () => {
         axios.post("/api/resources", form)
-            .then(_ => router.push("/"))
+            .then(_ => router.push("/#user-jokes"))
             .catch(err => alert(err?.response?.data));
         // ? (safe guard) -> undefined data
     }
